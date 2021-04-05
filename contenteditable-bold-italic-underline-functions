@@ -1,0 +1,6 @@
+/*
+  A small JAVASCRIPT project for contenteditable in HTML. 
+  Functions for identifying bold, italic and underline selection. 
+  Activating a custom class depending on the active function.
+*/
+
