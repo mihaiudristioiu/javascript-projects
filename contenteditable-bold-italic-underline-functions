@@ -1,0 +1,63 @@
+<!--
+  A small JAVASCRIPT project for contenteditable in HTML. 
+  Functions for identifying bold, italic and underline selection. 
+  Activating a custom class depending on the active function.
+-->
+
+<html>
+  <head>
+    <title>Content editable DIV - Bold, Italic, Underline functions</title>
+  </head>
+  <body>
+    <style>
+      button.active{
+        background: blue;
+        color: white;
+      }
+    </style>
+    
+    <!--We use false, null to toggle when you press the button-->
+    
+    <button id = "boldButton" type = "button" onclick="document.execCommand('bold', false, null);"><b>B</b></button>
+    <button id = "italicButton" type = "button" onclick="document.execCommand('italic', false, null);"><i><b>I</b></i></button>
+    <button id = "underlineButton" type = "button" onclick="document.execCommand('underline', false, null);"><u><b>U</b></u></button>
+    
+    <!--contenteditable is used to turn the div into a kind of textarea. The difference between textarea and contenteditable is that textarea 
+    renders HTML code, while contenteditable renders formatted text-->
+    
+    <div id = "editModalTextarea" contenteditable = "true">
+     <b>This is a bold text</b><br>
+     <i>This is a italic text</i><br>
+     <u>This is a underline text</i><br>
+     This is a simple text.
+    </div>
+    <script>
+      function isWritingBold() {
+        return document.queryCommandState('bold');
+      }
+      function isWritingItalic() {
+        return document.queryCommandState('italic');
+      }
+      function isWritingUnderline() {
+        return document.queryCommandState('underline');
+      }
+      
+      // If you plan to use the onselectionchange function in a modal for example when you close it it will return an error that the modal is not active. 
+      //That's why you need to check if the area exists.
+      
+      if (document.getElementById('editModalTextarea'))
+      {
+        editModalTextarea.onfocus = document.onselectionchange = e =>
+        {
+          //To avoid detecting text other than the area, you need to check that the selected content is in the area where you are editing the text.
+          if (document.activeElement.id == "editModalTextarea")
+          {
+            boldButton.classList.toggle('active', isWritingBold());
+            italicButton.classList.toggle('active', isWritingItalic());
+            underlineButton.classList.toggle('active', isWritingUnderline());
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
