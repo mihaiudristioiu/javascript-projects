@@ -1,8 +1,8 @@
-/*
+<!--
   A small JAVASCRIPT project for contenteditable in HTML. 
   Functions for identifying bold, italic and underline selection. 
   Activating a custom class depending on the active function.
-*/
+-->
 
 <html>
   <head>
@@ -16,14 +16,14 @@
       }
     </style>
     
-    /*We use false, null to toggle when you press the button*/
+    <!--We use false, null to toggle when you press the button-->
     
     <button id = "boldButton" type = "button" onclick="document.execCommand('bold', false, null);"><b>B</b></button>
     <button id = "italicButton" type = "button" onclick="document.execCommand('italic', false, null);"><i><b>I</b></i></button>
     <button id = "underlineButton" type = "button" onclick="document.execCommand('underline', false, null);"><u><b>U</b></u></button>
     
-    /*contenteditable is used to turn the div into a kind of textarea. The difference between textarea and contenteditable is that textarea 
-    renders HTML code, while contenteditable renders formatted text*/
+    <!--contenteditable is used to turn the div into a kind of textarea. The difference between textarea and contenteditable is that textarea 
+    renders HTML code, while contenteditable renders formatted text-->
     
     <div id = "editModalTextarea" contenteditable = "true">
      <b>This is a bold text</b><br>
