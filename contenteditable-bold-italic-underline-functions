@@ -2,7 +2,6 @@
   A small JAVASCRIPT project for contenteditable in HTML. 
   Functions for identifying bold, italic and underline selection. 
   Activating a custom class depending on the active function.
-  CODEPEN: https://codepen.io/mihaiudristioiu/pen/PoWKoVe
 -->
 
 <html>
@@ -29,7 +28,7 @@
     <div id = "editModalTextarea" contenteditable = "true">
      <b>This is a bold text</b><br>
      <i>This is a italic text</i><br>
-     <u>This is a underline text</i><br>
+     <u>This is a underline text</u><br>
      This is a simple text.
     </div>
     <script>
@@ -62,4 +61,3 @@
     </script>
   </body>
 </html>
-
