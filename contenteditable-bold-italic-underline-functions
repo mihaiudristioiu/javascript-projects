@@ -43,7 +43,7 @@
       }
       
       // If you plan to use the onselectionchange function in a modal for example when you close it it will return an error that the modal is not active. 
-      That's why you need to check if the area exists.
+      // That's why you need to check if the area exists.
       
       if (document.getElementById('editModalTextarea'))
       {
